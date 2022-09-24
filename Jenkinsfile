@@ -6,12 +6,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh './gradlew assemble'
+                sh 'gradle assemble'
             }
         }
         stage('Run Docker Images') {
             steps {
-                sh 'docker compose up'
+                sh 'docker-compose up'
             }
         }
     }
