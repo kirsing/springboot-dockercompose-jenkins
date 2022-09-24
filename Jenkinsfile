@@ -13,10 +13,11 @@ pipeline {
             steps {
                 sh './gradlew test'
             }
-            stage('Clean') {
-                        steps {
-                            sh './gradlew clean'
-                        }
+        }
+        stage('Clean') {
+            steps {
+                sh './gradlew clean'
+            }
         }
         stage('Build Docker Images') {
             steps {
