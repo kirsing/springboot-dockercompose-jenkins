@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Run Docker Images') {
             steps {
-                sh './gradlew composeUp'
+                sh 'gradle composeUp'
             }
         }
     }
