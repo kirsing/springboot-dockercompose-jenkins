@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-            docker { image 'node:16.13.1-alpine' }
-        }
+    agent any
     triggers {
         pollSCM '* * * * *'
     }
@@ -13,7 +11,7 @@ pipeline {
         }
         stage('Run Docker Images') {
             steps {
-                sh 'docker compose up'
+                sh 'docker-compose up'
             }
         }
     }
