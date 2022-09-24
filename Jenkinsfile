@@ -9,14 +9,14 @@ pipeline {
                 sh './gradlew assemble'
             }
         }
-         stage('Test') {
-            steps {
-                sh './gradlew test'
-            }
-        }
         stage('Clean') {
             steps {
                 sh './gradlew clean'
+            }
+        }
+         stage('Test') {
+            steps {
+                sh './gradlew test'
             }
         }
         stage('Build Docker Images') {
