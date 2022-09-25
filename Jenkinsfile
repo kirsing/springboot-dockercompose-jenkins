@@ -11,12 +11,12 @@ pipeline {
         }
         stage('Run Docker Images') {
             steps {
-                sh './gradlew composeUp'
+                sh 'gradle composeUp'
             }
         }
         stage('Down containers') {
             steps {
-                sh './gradlew composeDown'
+                sh 'gradle composeDown'
             }
         }
     }

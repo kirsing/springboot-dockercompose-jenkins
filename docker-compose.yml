@@ -6,7 +6,7 @@ services:
     restart: always
     build: .
     ports:
-      - 8085:8084
+      - 8082:8080
     environment:
       POSTGRES_HOST: postgresdb
       POSTGRES_USER: kirsing
