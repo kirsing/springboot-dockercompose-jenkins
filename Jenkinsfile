@@ -11,12 +11,12 @@ pipeline {
         }
         stage('Run Docker Images') {
             steps {
-                sh 'docker-compose up'
+                sh 'docker compose up'
             }
         }
         stage('Down containers') {
             steps {
-                sh 'docker-compose down'
+                sh 'docker compose down'
             }
         }
     }
