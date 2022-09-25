@@ -9,8 +9,8 @@ pipeline {
                 sh './gradlew assemble'
             }
         }
-        stage('Initialize'){
         def dockerHome = tool 'myDocker'
+        stage('Initialize'){
         env.PATH = "${dockerHome}/bin:${env.PATH}"
         }
         stage('Run Docker Images') {
