@@ -9,9 +9,14 @@ pipeline {
                 sh './gradlew assemble'
             }
         }
+        stage('Test') {
+         steps {
+          sh 'gradle test'
+                    }
+                }
         stage('Run Docker Images') {
             steps {
-                sh 'docker compose up'
+                sh './gradlew composeUp'
             }
         }
     }
