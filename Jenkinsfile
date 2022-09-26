@@ -9,13 +9,14 @@ pipeline {
                 sh './gradlew assemble'
             }
         }
-        stage('Run Docker Images') {
+        stage('Build Docker Images') {
             steps {
-                sh 'docker compose up'
+                sh 'docker compose build'
             }
         }
-        stage('Down containers') {
+        stage('Run containers') {
             steps {
+                sh 'docker compose up'
                 sh 'docker compose down'
             }
         }
