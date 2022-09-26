@@ -9,7 +9,7 @@ pipeline {
                 sh './gradlew assemble'
             }
         }
-        stage('Build') {
+        stage('Build images') {
             steps {
                 sh 'docker compose build'
             }
