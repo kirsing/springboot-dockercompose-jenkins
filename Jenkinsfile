@@ -14,10 +14,11 @@ pipeline {
                 sh 'docker compose build'
             }
         }
-        stage('Run containers') {
-            steps {
-                sh 'docker compose up'
-            }
-        }
+         stage('Push Docker image') {
+                    steps {
+                        sh 'docker login --username=kirsing98 --password=219528Kirs'
+                        sh 'docker compose push'
+                    }
+                }
     }
 }
