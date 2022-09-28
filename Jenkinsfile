@@ -17,7 +17,7 @@ pipeline {
          stage('Push Docker image') {
                     steps {
                         sh 'docker login --username=kirsing98 --password=219528Kirs'
-                        sh 'docker compose push'
+                        sh 'docker compose push kirsing98/mydevrepo'
                     }
                 }
     }
