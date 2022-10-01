@@ -17,7 +17,7 @@ pipeline {
          stage('Push Docker image') {
                     steps {
                         sh 'docker login --username=kirsing98 --password=219528Kirs'
-                        sh 'docker compose push kirsing98/my-jenkins:$BUILD_NUMBER'
+                        sh 'docker compose push'
                     }
                 }
     }

@@ -2,7 +2,7 @@ version: "3"
 services:
   springboot-app:
     container_name: spring-app
-    image: springboot-app
+    image: kirsing98/springboot-app
     restart: always
     build: .
     ports:
@@ -12,6 +12,8 @@ services:
       POSTGRES_USER: kirsing
       POSTGRES_PASSWORD: 219528k
       POSTGRES_PORT: 5432
+    depends_on:
+      - postgredb
 
   postgredb:
     container_name: postgresdb
